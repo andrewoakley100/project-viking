@@ -112,6 +112,15 @@ export const mutations = {
   }
 };
 
+const getters = {
+  article(state) {
+    return state.article;
+  },
+  comments(state) {
+    return state.comments;
+  }
+};
+
 export default {
   state,
   actions,
