@@ -92,6 +92,26 @@ export const actions = {
   }
 };
 
+export const mutations = {
+  [SET_ARTICLE](state, article) {
+    state.article = article;
+  },
+  [SET_COMMENTS](state, comments) {
+    state.comments = comments;
+  },
+  [TAG_ADD](state, tag) {
+    state.article.tagList = state.article.tagList.concat([tag]);
+  },
+  [TAG_REMOVE](state, tag) {
+    state.article.tagList = state.article.tagList.filter(t => t !== tag);
+  },
+  [RESET_STATE]() {
+    for (let f in state) {
+      Vue.set(state, f, initialState[f]);
+    }
+  }
+};
+
 export default {
   state,
   actions,
